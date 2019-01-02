@@ -1,0 +1,120 @@
+
+<html>
+<head>
+<script type="text/javascript">
+function validate()
+{ 
+
+    var str1 = document.forms["Registration"]["password"].value;
+    var str2 = document.forms["Registration"]["password2"].value;
+    if(str1.localeCompare(str2)!=0)
+     {
+        alert("Password did not match!");
+        return false;
+        }
+
+
+   if( document.Registration.username.value == "" )
+   {
+     alert( "Please provide your Name!" );
+     document.Registration.username.focus() ;
+     return false;
+   }
+   if ( ( Registration.sex[0].checked == false ) && ( Registration.sex[1].checked == false ) )
+   {
+   alert ( "Please choose your Gender: Male or Female" );
+   return false;
+   }   
+   if( document.Registration.City.value == "-1" )
+   {
+     alert( "Please provide your City!" );
+     document.Registration.City.focus() ;
+     return false;
+   }        
+   if( document.Registration.State.value == "-1" )
+   {
+     alert( "Please provide your Select State!" );
+     
+     return false;
+   }
+ var email = document.Registration.email.value;
+  atpos = email.indexOf("@");
+  dotpos = email.lastIndexOf(".");
+ if (email == "" || atpos < 1 || ( dotpos - atpos < 2 )) 
+ {
+     alert("Please enter correct email ID")
+     document.Registration.email.focus() ;
+     return false;
+ }
+   return true ;
+}
+
+
+
+</script>
+</head>
+<body background="3d.jpg">
+<form method="post" name="Registration" onsubmit="return(validate(this))" action="register.php">
+
+<table cellpadding="2" height="100%" width="100%" align="center"
+cellspacing="2">
+
+<tr>
+<td colspan=2>
+<center><font size=9 face="Algerian"><b>Registration Form</b></font></center>
+</td>
+</tr>
+
+<tr>
+<td><font size=5 face="Castellar">Name</font></td>
+<td><input type=text name="username" id="textname" size="30" required></td>
+</tr>
+
+<tr>
+<td><font size=5 face="Castellar">Sex</font></td>
+<td><input type="radio" name="sex" value="male" size="10" required/>Male
+<input type="radio" name="sex" value="Female" size="10" required/>Female</td>
+</tr>
+
+<tr>
+<td><font size=5 face="Castellar">City</font></td>
+<td><select name="City">
+<option value="-1" selected>Select...</option>
+<option value="CHENNAI">Chennai</option>
+<option value="COIMBATORE">Coimbatore</option>
+<option value="MADURAI">Madurai</option>
+<option value="TRICHY">Trichy</option>
+<option value="TRICHY">Tirunelveli</option>
+<option value="TRICHY">Palani</option>
+<option value="TRICHY">Tanjore</option>
+<option value="TRICHY">Tuticorin</option>
+<option value="TRICHY">Cuddalore</option>
+<option value="TRICHY">Udumalpet</option>
+<option value="TRICHY">Neyveli</option>
+<option value="TRICHY">Pollachi</option>
+<option value="TRICHY">Karur</option>
+<option value="TRICHY">Erode</option>
+<option value="TRICHY">Nammakal</option>
+<option value="TRICHY">Salem</option>
+</select></td>
+</tr>
+<tr>
+<td><font size=5 face="Castellar">Email Id</font></td>
+<td><input type="email" name="email" id="emailid" size="30" required/></td>
+</tr>
+<tr>
+<td><font size=5 face="Castellar">Password</font></td>
+<td><input type="password" name="password" id="password" size="30" required/></td>
+</tr>
+<tr>
+<td><font size=5 face="Castellar">Re-Type Password</font></td>
+<td><input type="password" name="password2" id="password2" size="30" required/></td>
+</tr>
+<tr>
+<td><input type="Reset"></td>
+<td colspan="2"><input type="submit" value="Proceed to Exam"/></td>
+</tr>
+</table>
+</form>
+</body>
+</html>
