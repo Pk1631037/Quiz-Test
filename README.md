@@ -1,1 +1,4 @@
 # Quiz-Test
+
+In this Quiz Test is conducted for only registered candidates question are taken in online and validation is done for correct answers using HTML, CSS, JavaScript and PHP
+
